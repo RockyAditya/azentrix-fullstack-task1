@@ -32,6 +32,11 @@ https://ai.stanford.edu/~amaas/data/sentiment/
 
 ---
 
+## Live Model Repository
+
+🤗 Hugging Face Model:
+https://huggingface.co/DemonKing112/imdb-distilbert-sentiment
+---
 ## 🛠 Technologies Used
 
 ### Languages & Frameworks
