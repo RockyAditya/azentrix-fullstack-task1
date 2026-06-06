@@ -6,6 +6,32 @@ CineScore is an end-to-end Natural Language Processing (NLP) project that perfor
 
 ---
 
+# 📸 Application Preview
+
+## 🏠 Home Dashboard
+
+<img width="1600" height="810" alt="WhatsApp Image 2026-06-06 at 7 15 51 PM" src="https://github.com/user-attachments/assets/261959c1-8b4a-4216-9fe8-7e057d995ce1" />
+
+---
+
+## 🎯 Sentiment Prediction
+
+<img width="1600" height="805" alt="WhatsApp Image 2026-06-06 at 7 17 31 PM" src="https://github.com/user-attachments/assets/1101b9cc-5d05-4ae4-9391-bc2b57341e05" />
+<img width="1600" height="806" alt="WhatsApp Image 2026-06-06 at 7 17 48 PM" src="https://github.com/user-attachments/assets/f6cf7968-588c-4588-8d5a-44f55b7f5b1d" />
+
+
+---
+
+## 📊 Analytics Dashboard
+
+<img width="1600" height="805" alt="WhatsApp Image 2026-06-06 at 7 18 04 PM" src="https://github.com/user-attachments/assets/3234cd00-98b1-4a6f-ab83-dd1b8e2dff27" />
+<img width="1600" height="805" alt="WhatsApp Image 2026-06-06 at 7 18 21 PM" src="https://github.com/user-attachments/assets/784cd4c8-996a-450d-9c8b-94fb6f245766" />
+<img width="1600" height="805" alt="WhatsApp Image 2026-06-06 at 7 18 31 PM" src="https://github.com/user-attachments/assets/54415f77-98e9-47e3-97cc-f860ba0dec6c" />
+
+
+---
+
+---
 ## 🎯 Objectives
 
 * Perform sentiment classification on movie reviews.
