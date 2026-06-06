@@ -9,5 +9,3 @@ __pycache__/
 .ipynb_checkpoints/
 
 .env
-
-final_model/

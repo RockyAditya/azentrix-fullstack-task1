@@ -450,7 +450,7 @@ div[data-testid="stAlert"] { border-radius: 10px !important; }
 
 @st.cache_resource
 def load_model():
-    model_path = "final_model"
+    model_path = "DemonKing112/imdb-distilbert-sentiment"
     tokenizer = AutoTokenizer.from_pretrained(model_path)
     model = AutoModelForSequenceClassification.from_pretrained(model_path)
     return tokenizer, model
@@ -507,10 +507,10 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
     page = st.radio(
-        "",
+        "Navigation",
         [
-            "🏠  Overview",
-            "🔍  Analyze Review",
+            "Overview",
+            "Analyze Review",
             "📊  Performance",
             "⚖️  Model Comparison",
             "🧠  DistilBERT",

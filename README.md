@@ -4,18 +4,16 @@
 
 CineScore is an end-to-end Natural Language Processing (NLP) project that performs sentiment analysis on movie reviews from the IMDB dataset. The project compares a traditional Machine Learning approach (TF-IDF + SGDClassifier) with a Transformer-based Deep Learning approach (DistilBERT) to classify reviews as Positive or Negative.
 
-The objective is to evaluate the effectiveness of modern transformer architectures against conventional machine learning techniques and deploy the best-performing model through an interactive Streamlit web application.
-
 ---
 
 ## 🎯 Objectives
 
-- Perform sentiment classification on movie reviews.
-- Compare traditional Machine Learning and Transformer-based NLP approaches.
-- Fine-tune DistilBERT on the IMDB dataset.
-- Evaluate models using standard classification metrics.
-- Deploy the trained model using Streamlit.
-- Build a professional AI-powered dashboard for sentiment prediction.
+* Perform sentiment classification on movie reviews.
+* Compare traditional ML and Transformer-based approaches.
+* Fine-tune DistilBERT on IMDB reviews.
+* Evaluate models using industry-standard metrics.
+* Deploy the model using Streamlit.
+* Host the trained model for reproducible deployment.
 
 ---
 
@@ -23,11 +21,11 @@ The objective is to evaluate the effectiveness of modern transformer architectur
 
 **Dataset:** IMDB Movie Review Dataset
 
-- Total Reviews: 50,000
-- Positive Reviews: 25,000
-- Negative Reviews: 25,000
-- Training Samples: 40,000
-- Validation Samples: 10,000
+* Total Reviews: 50,000
+* Positive Reviews: 25,000
+* Negative Reviews: 25,000
+* Training Samples: 40,000
+* Validation Samples: 10,000
 
 Dataset Source:
 https://ai.stanford.edu/~amaas/data/sentiment/
@@ -36,81 +34,51 @@ https://ai.stanford.edu/~amaas/data/sentiment/
 
 ## 🛠 Technologies Used
 
-### Programming Language
-- Python
+### Languages & Frameworks
 
-### Libraries & Frameworks
-- Pandas
-- NumPy
-- Scikit-Learn
-- PyTorch
-- Hugging Face Transformers
-- Datasets
-- Evaluate
-- Streamlit
-- Plotly
-- Matplotlib
-- Seaborn
+* Python
+* PyTorch
+* Hugging Face Transformers
+* Scikit-Learn
+* Streamlit
+* Plotly
+* Pandas
+* NumPy
 
-### Model
-- DistilBERT (`distilbert-base-uncased`)
+### Development Tools
 
-### Development Environment
-- Google Colab
-- VS Code
+* Google Colab
+* Visual Studio Code
+* GitHub
+* Hugging Face Hub
 
 ---
 
 # 🔄 Project Workflow
 
-## 1. Data Collection
+## 1. Data Preprocessing
 
-- Loaded IMDB Movie Review Dataset.
-- Verified class balance.
-- Performed train-validation split.
+* HTML tag removal
+* Text cleaning
+* Lowercase conversion
+* Label encoding
 
-## 2. Data Preprocessing
-
-- Removed HTML tags.
-- Converted text to lowercase.
-- Cleaned review content.
-- Encoded labels:
-  - Positive → 1
-  - Negative → 0
-
-## 3. Baseline Model
+## 2. Baseline Model
 
 ### TF-IDF + SGDClassifier
 
-Traditional Machine Learning pipeline:
-
-Review Text
+Movie Review
 → TF-IDF Vectorization
 → SGDClassifier
 → Sentiment Prediction
 
-### Baseline Result
-
-| Metric | Score |
-|----------|----------|
-| Accuracy | 88.79% |
+**Accuracy:** 88.79%
 
 ---
 
-## 4. Transformer Model
+## 3. Transformer Model
 
 ### DistilBERT
-
-DistilBERT is a lightweight version of BERT created through knowledge distillation.
-
-Advantages:
-
-- Faster training
-- Reduced memory consumption
-- Strong contextual understanding
-- High NLP performance
-
-Architecture:
 
 Movie Review
 ↓
@@ -126,130 +94,131 @@ Positive / Negative
 
 ## ⚙ Training Configuration
 
-| Parameter | Value |
-|------------|---------|
-| Model | distilbert-base-uncased |
-| Epochs | 3 |
-| Batch Size | 16 |
-| Learning Rate | 2e-5 |
-| Optimizer | AdamW |
-| GPU | Tesla T4 |
-| Framework | PyTorch + Hugging Face |
+| Parameter          | Value                   |
+| ------------------ | ----------------------- |
+| Base Model         | distilbert-base-uncased |
+| Epochs             | 3                       |
+| Learning Rate      | 2e-5                    |
+| Optimizer          | AdamW                   |
+| GPU                | Tesla T4                |
+| Training Samples   | 40,000                  |
+| Validation Samples | 10,000                  |
 
 ---
 
-# 📊 Results
+# 📊 Model Performance
 
-## DistilBERT Performance
+## DistilBERT Results
 
-| Metric | Score |
-|----------|----------|
-| Accuracy | 92.16% |
+| Metric    | Score  |
+| --------- | ------ |
+| Accuracy  | 92.16% |
 | Precision | 91.83% |
-| Recall | 92.56% |
-| F1 Score | 92.19% |
+| Recall    | 92.56% |
+| F1 Score  | 92.19% |
 
----
+### Classification Report
 
-## Confusion Matrix
+| Class    | Precision | Recall | F1 Score |
+| -------- | --------- | ------ | -------- |
+| Negative | 0.93      | 0.92   | 0.92     |
+| Positive | 0.92      | 0.93   | 0.92     |
+
+### Confusion Matrix
 
 | Actual / Predicted | Negative | Positive |
-|-------------------|----------|----------|
-| Negative | 4588 | 412 |
-| Positive | 372 | 4628 |
-
-### Summary
-
-- Correct Predictions: 9216
-- Incorrect Predictions: 784
-- Validation Samples: 10,000
+| ------------------ | -------- | -------- |
+| Negative           | 4588     | 412      |
+| Positive           | 372      | 4628     |
 
 ---
 
 # 📈 Model Comparison
 
-| Model | Accuracy |
-|---------|---------|
-| TF-IDF + SGDClassifier | 88.79% |
-| DistilBERT | 92.16% |
+| Model                  | Accuracy |
+| ---------------------- | -------- |
+| TF-IDF + SGDClassifier | 88.79%   |
+| DistilBERT             | 92.16%   |
 
 ### Improvement
 
-DistilBERT achieved:
-
-**+3.37% Accuracy Improvement**
-
-over the traditional TF-IDF + SGDClassifier baseline.
+**DistilBERT achieved a +3.37% accuracy improvement over the baseline model.**
 
 ---
 
-# 🔍 Sample Predictions
+# 🤗 Trained Model Repository
 
-### Example 1
+The DistilBERT model used in this project was **fine-tuned by the author** on the IMDB Movie Review Dataset.
 
-Input:
+Due to GitHub's file size limitation (100 MB per file), the trained model artifacts (~256 MB) are hosted separately on the author's Hugging Face account.
 
-```text
-I absolutely loved this movie. The acting was brilliant.
-```
+> **Important:** The model hosted on Hugging Face is not a third-party model. It is the final fine-tuned model trained during this project and uploaded by the author.
 
-Prediction:
+### Model Repository
 
-```text
-Positive
-Confidence: 99.82%
-```
+Hugging Face Model:
 
-### Example 2
+https://huggingface.co/DemonKing112/imdb-distilbert-sentiment
 
-Input:
+### Training Summary
 
-```text
-This was the worst movie I have ever watched.
-```
+| Parameter          | Value              |
+| ------------------ | ------------------ |
+| Base Model         | DistilBERT         |
+| Dataset            | IMDB Movie Reviews |
+| Training Samples   | 40,000             |
+| Validation Samples | 10,000             |
+| Epochs             | 3                  |
+| Accuracy           | 92.16%             |
+| F1 Score           | 92.19%             |
 
-Prediction:
+### Why Hugging Face?
 
-```text
-Negative
-Confidence: 99.79%
-```
+The trained model contains a `model.safetensors` file of approximately **256 MB**, which exceeds GitHub's standard file size limit.
+
+To maintain a lightweight repository while ensuring full reproducibility, the model is hosted on Hugging Face Hub and automatically downloaded by the Streamlit application.
 
 ---
 
 # 🎨 Streamlit Application
 
-The project includes a professional Streamlit dashboard named **CineScore**.
+The project includes a professional Streamlit dashboard called **CineScore**.
 
 ### Features
 
-- Interactive Sentiment Prediction
-- Confidence Visualization
-- Performance Dashboard
-- DistilBERT Architecture Overview
-- TF-IDF vs DistilBERT Comparison
-- Project Analytics
-- Modern Dark-Themed UI
+* Interactive Sentiment Prediction
+* Confidence Visualization
+* Model Analytics Dashboard
+* TF-IDF vs DistilBERT Comparison
+* DistilBERT Architecture Overview
+* Responsive UI Design
+
+---
+
+# 📉 Visualizations
+
+The project includes:
+
+* Accuracy Curve
+* Training Loss Curve
+* Validation Loss Curve
+* Performance Metrics Chart
+* Prediction Distribution
+* Confusion Matrix Heatmap
+
+All graphs are available inside the `graphs/` directory.
 
 ---
 
 # 📁 Project Structure
 
 ```text
-CineScore/
+azentrix-fullstack-task1/
 │
 ├── app.py
-├── requirements.txt
 ├── README.md
-│
-├── final_model/
-│   ├── config.json
-│   ├── model.safetensors
-│   ├── tokenizer.json
-│   ├── tokenizer_config.json
-│   ├── special_tokens_map.json
-│   ├── vocab.txt
-│   └── training_args.bin
+├── requirements.txt
+├── .gitignore
 │
 ├── graphs/
 │   ├── accuracy_curve.png
@@ -259,61 +228,56 @@ CineScore/
 │   ├── training_loss.png
 │   └── validation_loss.png
 │
-└── notebooks/
+└── Hugging Face Model
+    └── DemonKing112/imdb-distilbert-sentiment
 ```
 
 ---
 
-# 🚀 Running the Application
+# 🚀 Installation & Usage
 
-## Create Virtual Environment
+```bash
+git clone https://github.com/RockyAditya/azentrix-fullstack-task1.git
+cd azentrix-fullstack-task1
+```
+
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-## Activate Environment
-
-Windows:
+### Activate Environment
 
 ```bash
 venv\Scripts\activate
 ```
 
-## Install Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run Streamlit
+### Run Application
 
 ```bash
 streamlit run app.py
 ```
 
+The trained model will be automatically downloaded from Hugging Face during the first run.
+
 ---
 
 # 💡 Key Learnings
 
-- NLP preprocessing techniques
-- Feature extraction using TF-IDF
-- Transformer-based sentiment classification
-- Fine-tuning DistilBERT
-- Model evaluation and comparison
-- Streamlit deployment
-- Interactive AI dashboard development
-
----
-
-# 🔮 Future Enhancements
-
-- Multi-class sentiment analysis
-- Aspect-based sentiment analysis
-- Real-time review monitoring
-- Hugging Face Spaces deployment
-- Streamlit Cloud deployment
-- Review recommendation system
+* NLP Preprocessing
+* TF-IDF Feature Engineering
+* Transformer Fine-Tuning
+* Hugging Face Ecosystem
+* Streamlit Deployment
+* Model Hosting & Distribution
+* GitHub Project Management
 
 ---
 
@@ -323,26 +287,31 @@ streamlit run app.py
 
 B.Tech Computer Science & Engineering
 
-Specialization:
-- Artificial Intelligence
-- Machine Learning
-- Natural Language Processing
-- Full Stack Development
+Areas of Interest:
+
+* Artificial Intelligence
+* Machine Learning
+* Natural Language Processing
+* Full Stack Development
 
 ---
 
-# 🏆 Final Outcome
+# 🏆 Project Outcome
 
-✅ Traditional ML Baseline Developed
+✅ TF-IDF Baseline Developed
 
 ✅ DistilBERT Fine-Tuned on 50K Reviews
 
 ✅ Achieved 92.16% Accuracy
 
-✅ Model Comparison Completed
+✅ Comparative Analysis Completed
 
-✅ Streamlit Dashboard Developed
+✅ Professional Streamlit Dashboard Built
 
-✅ End-to-End NLP Pipeline Implemented
+✅ Trained Model Hosted on Hugging Face
 
-**Project Status: Completed**# azentrix-fullstack-task1
+✅ Source Code Published on GitHub
+
+✅ Deployment-Ready Application
+
+**Project Status: Completed**
